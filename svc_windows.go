@@ -12,8 +12,12 @@ import (
 	wsvc "golang.org/x/sys/windows/svc"
 )
 
-// Create variables for svc and signal functions so we can mock them in tests
-var svcIsWindowsService = wsvc.IsWindowsService
+// Create function and variable for svc and signal functions so we can mock them in tests
+func svcIsWindowsService() bool {
+	// Use deprecated function because IsWindowsService requires Admin rights
+	return !wsvc.IsAnInteractiveSession()
+}
+
 var svcRun = wsvc.Run
 
 type windowsService struct {
