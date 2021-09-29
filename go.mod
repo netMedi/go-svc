@@ -1,4 +1,4 @@
-module github.com/judwhite/go-svc
+module github.com/netmedi/go-svc
 
 go 1.15
 
