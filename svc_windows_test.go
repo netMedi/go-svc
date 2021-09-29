@@ -48,6 +48,7 @@ func setupWinServiceTest(wsf *mockWinServiceFuncs) {
 	}
 
 	signalNotify = wsfWrapper.signalNotify
+	svcIsWindowsService = wsfWrapper.svcIsWindowsService
 	svcRun = wsfWrapper.svcRun
 }
 
